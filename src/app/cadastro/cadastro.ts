@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { cliente } from './cliente';
 
 @Component({
   selector: 'app-cadastro',
@@ -14,5 +15,9 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './cadastro.scss'
 })
 export class Cadastro {
+  cliente: cliente = new cliente();
 
+  salvar(){
+    console.log(this.cliente);
+  }
 }
