@@ -3,12 +3,12 @@ import { RouterOutlet, RouterLink } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { Cadastro } from './cadastro/cadastro';
-import { Consulta } from './consulta/consulta';
+import { ConsultaComponent } from './consulta/consulta';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, MatToolbarModule, MatIconModule, Cadastro, Consulta],
+  imports: [RouterOutlet, RouterLink, MatToolbarModule, MatIconModule, Cadastro, ConsultaComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
