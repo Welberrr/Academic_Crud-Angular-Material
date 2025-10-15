@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { Cliente } from './cadastro/cliente';
 
@@ -14,6 +15,16 @@ export class ClienteService {
     const storage = this.obterStorage();
     storage.push(cliente);
 
+    localStorage.setItem(ClienteService.REPO_CLIENTES, JSON.stringify(storage));
+  }
+
+  atualizar(cliente: Cliente){
+    const storage = this.obterStorage();
+    storage.forEach(c => {
+      if(c.id === cliente.id){
+        Object.assign(c, cliente);
+      }
+    })
     localStorage.setItem(ClienteService.REPO_CLIENTES, JSON.stringify(storage));
   }
 
