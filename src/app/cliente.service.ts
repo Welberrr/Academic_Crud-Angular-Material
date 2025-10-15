@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { cliente } from './cadastro/cliente';
+import { Cliente } from './cadastro/cliente';
 
 @Injectable({
   providedIn: 'root'
@@ -10,14 +10,14 @@ export class ClienteService {
 
   constructor() { }
 
-  salvar(cliente: cliente){
+  salvar(cliente: Cliente){
     const storage = this.obterStorage();
     storage.push(cliente);
 
     localStorage.setItem(ClienteService.REPO_CLIENTES, JSON.stringify(storage));
   }
 
-  pesquisarClientes(nomeBusca: string) : cliente[] {
+  pesquisarClientes(nomeBusca: string) : Cliente[] {
 
     const clientes = this.obterStorage();
 
@@ -28,19 +28,19 @@ export class ClienteService {
     return clientes.filter(cliente => cliente.nome?.indexOf(nomeBusca) !== -1)
   }
 
-  buscarClientePorId(id: string) : cliente | undefined {
+  buscarClientePorId(id: string) : Cliente | undefined {
     const clientes = this.obterStorage();
     return clientes.find(cliente => cliente.id === id)
   }
 
-  private obterStorage() : cliente[] {
+  private obterStorage() : Cliente[] {
     const repositorioClientes = localStorage.getItem(ClienteService.REPO_CLIENTES);
     if(repositorioClientes){
-      const clientes: cliente[] = JSON.parse(repositorioClientes);
+      const clientes: Cliente[] = JSON.parse(repositorioClientes);
       return clientes;
     }
     
-    const clientes: cliente[] = [];
+    const clientes: Cliente[] = [];
     localStorage.setItem(ClienteService.REPO_CLIENTES, JSON.stringify(clientes));
     return clientes;
   }

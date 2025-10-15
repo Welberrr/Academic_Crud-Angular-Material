@@ -1,15 +1,15 @@
+import { v4 as uuid } from 'uuid'
 
-import { v4 as uuid } from 'uuid';
-export class cliente {
-    id?: String;
-    nome?: String;
-    cpf?: String;
-    dataNascimento?: String;
-    email?: String;
+export class Cliente {
+    id?: string;
+    nome?: string;
+    cpf?: string;
+    dataNascimento?: string;
+    email?: string;
 
     static newCliente(){
-        let client = new cliente();
-        let id = uuid();
+        const cliente = new Cliente();
+        cliente.id = uuid();
         return cliente;
     }
 }

@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input'
@@ -9,7 +8,7 @@ import { FormsModule } from '@angular/forms'
 import { MatTableModule } from '@angular/material/table'
 import { MatButtonModule } from '@angular/material/button';
 import { ClienteService } from '../cliente.service';
-import { cliente } from '../cadastro/cliente';
+import { Cliente } from '../cadastro/cliente';
 import { Router } from '@angular/router';
 
 @Component({
@@ -24,13 +23,13 @@ import { Router } from '@angular/router';
     FormsModule,
     CommonModule
   ],
-  templateUrl: './consulta.html',
-  styleUrl: './consulta.scss'
+  templateUrl: './consulta.component.html',
+  styleUrl: './consulta.component.scss'
 })
 export class ConsultaComponent implements OnInit {
 
   nomeBusca: string = '';
-  listaClientes: cliente[] = [];
+  listaClientes: Cliente[] = [];
   colunasTable: string[] = ["id", "nome", "cpf", "dataNascimento", "email", "acoes"]
 
   constructor(
