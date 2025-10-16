@@ -13,7 +13,7 @@ export class BrasilapiService {
   constructor(private http: HttpClient) { }
 
   lsitarUFs(): Observable<Estado[]>{
-    const path = '/ibge/uf/v1';
+    const path = 'ibge/uf/v1';
     return this.http.get<Estado[]>(this.baseURL + path);
   }
 }
