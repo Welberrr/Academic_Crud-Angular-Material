@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Cliente } from './cliente';
 import { ClienteService } from '../cliente.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -22,7 +23,7 @@ import {NgxMaskDirective, provideNgxMask} from 'ngx-mask';
     MatInputModule,
     MatIconModule,
     MatButtonModule,
-    NgxMaskDirective
+    NgxMaskDirective,
   ], 
   providers: [provideNgxMask()],
   templateUrl: './cadastro.component.html',
@@ -35,7 +36,8 @@ export class CadastroComponent implements OnInit {
   constructor(
     private service: ClienteService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private snack: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -55,10 +57,16 @@ export class CadastroComponent implements OnInit {
     if (!this.atualizando) {
       this.service.salvar(this.cliente);
       this.cliente = Cliente.newCliente();
+      this.mostrarMensagem('Cliente salvo com sucesso!');
     } else {
       this.service.atualizar(this.cliente);
       this.router.navigate(['/consulta']);
+      this.mostrarMensagem('Cliente atualizado com sucesso!');
     }
+  }
+
+  mostrarMensagem(mensagem: string) {
+    this.snack.open(mensagem, "OK");
   }
 }
 

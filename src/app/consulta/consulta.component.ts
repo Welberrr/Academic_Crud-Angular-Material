@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon'
 import { FormsModule } from '@angular/forms'
 import { MatTableModule } from '@angular/material/table'
 import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ClienteService } from '../cliente.service';
 import { Cliente } from '../cadastro/cliente';
 import { Router } from '@angular/router';
@@ -34,7 +35,8 @@ export class ConsultaComponent implements OnInit {
 
   constructor(
     private service: ClienteService,
-    private router: Router
+    private router: Router,
+    private snack: MatSnackBar
   ){
 
   }
@@ -58,5 +60,6 @@ export class ConsultaComponent implements OnInit {
   deletar(cliente: Cliente){
     this.service.deletarCliente(cliente);
     this.listaClientes = this.service.pesquisarClientes('');
+    this.snack.open('Cliente deletado com sucesso', 'OK');
    }
 }
