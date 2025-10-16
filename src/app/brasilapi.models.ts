@@ -1,5 +1,5 @@
 export interface Estado{
-    sigala: string;
+    sigla: string;
     nome: string;
 }
 

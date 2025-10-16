@@ -7,12 +7,14 @@ import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSelectModule } from '@angular/material/select';
 import { Cliente } from './cliente';
 import { ClienteService } from '../cliente.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {NgxMaskDirective, provideNgxMask} from 'ngx-mask';
 import { BrasilapiService } from '../brasilapi.service';
 import { Estado } from '../brasilapi.models';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cadastro',
@@ -25,7 +27,9 @@ import { Estado } from '../brasilapi.models';
     MatInputModule,
     MatIconModule,
     MatButtonModule,
+    CommonModule,
     NgxMaskDirective,
+    MatSelectModule
   ], 
   providers: [provideNgxMask()],
   templateUrl: './cadastro.component.html',
