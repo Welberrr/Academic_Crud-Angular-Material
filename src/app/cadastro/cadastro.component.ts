@@ -7,13 +7,13 @@ import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatSelectModule } from '@angular/material/select';
+import { MatSelectChange, MatSelectModule } from '@angular/material/select';
 import { Cliente } from './cliente';
 import { ClienteService } from '../cliente.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {NgxMaskDirective, provideNgxMask} from 'ngx-mask';
 import { BrasilapiService } from '../brasilapi.service';
-import { Estado } from '../brasilapi.models';
+import { Estado, Municipio } from '../brasilapi.models';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -39,7 +39,7 @@ export class CadastroComponent implements OnInit {
   cliente: Cliente = Cliente.newCliente();
   atualizando: boolean = false;
   estados: Estado[] = [];
-  municipios: string[] = [];
+  municipios: Municipio[] = [];
 
   constructor(
     private service: ClienteService,
@@ -57,6 +57,10 @@ export class CadastroComponent implements OnInit {
         if (clienteEncontrado) {
           this.atualizando = true;
           this.cliente = clienteEncontrado;
+          if (this.cliente.uf) {
+            const event = {value: this.cliente.uf}
+            this.carregarMunicipios(event as MatSelectChange);
+          }
         }
       }
     })
@@ -69,6 +73,14 @@ export class CadastroComponent implements OnInit {
       next: listaEstados => this.estados = listaEstados,
       error: erro => console.log("Erro ao listar estados", erro)
     })
+  }
+
+  carregarMunicipios(event: MatSelectChange) {
+   const ufSecionada = event.value;
+   this.brasilApiService.listarMunicipios(ufSecionada).subscribe({
+    next: listaMunicipios => this.municipios = listaMunicipios,
+    error: erro => console.log("Erro ao listar municípios", erro)
+   })
   }
 
   salvar() {
@@ -87,4 +99,3 @@ export class CadastroComponent implements OnInit {
     this.snack.open(mensagem, "OK");
   }
 }
-
