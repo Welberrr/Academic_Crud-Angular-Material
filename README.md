@@ -82,11 +82,6 @@ Execute o servidor de desenvolvimento:
 
 ng serve
 
-
-Acesse no navegador:
-
-http://localhost:4200/
-
 📝 Licença
 
 Este projeto está sob a licença MIT.
