@@ -1,59 +1,71 @@
-# CrudAngularMaterial
+Angular Clients CRUD
+📄 Descrição
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.5.
+Este é um projeto desenvolvido para demonstrar e praticar habilidades com Angular. A aplicação consiste em um CRUD (Create, Read, Update, Delete) completo de clientes, com toda a interface estilizada utilizando os componentes do Angular Material.
 
-## Development server
+O principal objetivo deste projeto é servir como um item de portfólio, evidenciando o conhecimento em funcionalidades essenciais do framework Angular, como componentização, consumo de APIs externas, reatividade e manipulação de formulários.
 
-To start a local development server, run:
+Além das operações básicas de um CRUD, a aplicação se integra a uma API governamental do IBGE. O usuário seleciona um Estado em um campo de seleção e, com base nessa escolha, um segundo campo é populado dinamicamente com os municípios correspondentes, demonstrando a integração com serviços de terceiros e a reatividade da aplicação.
 
-```bash
-ng serve
-```
+✨ Funcionalidades
+Cadastro de Clientes: Formulário para adicionar novos clientes.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Listagem de Clientes: Exibição dos clientes cadastrados em uma tabela moderna e responsiva.
 
-## Code scaffolding
+Edição de Clientes: Possibilidade de atualizar as informações de um cliente existente.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Exclusão de Clientes: Opção para remover um cliente da base de dados.
 
-```bash
-ng generate component component-name
-```
+Consulta de CEP: Integração com a API ViaCEP para preenchimento automático de endereço durante o cadastro/edição.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Interface com Angular Material: Todos os componentes visuais, como tabelas, botões, modais e formulários, são estilizados com Angular Material, garantindo um design limpo e profissional.
 
-```bash
-ng generate --help
-```
+💻 Telas do Projeto
+Tela Principal (Listagem de Clientes) Aqui você pode adicionar um print da tela principal da sua aplicação.
 
-## Building
+[INSERIR PRINT DA TELA DE LISTAGEM AQUI]
 
-To build the project run:
+Tela de Cadastro/Edição de Cliente Aqui você pode adicionar um print do formulário/modal de cadastro.
 
-```bash
-ng build
-```
+[INSERIR PRINT DA TELA DE CADASTRO AQUI]
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+🚀 Tecnologias Utilizadas
+Angular 20
 
-## Running unit tests
+Angular CLI
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Angular Material
 
-```bash
-ng test
-```
+TypeScript
 
-## Running end-to-end tests
+RxJS para programação reativa.
 
-For end-to-end (e2e) testing, run:
+HTML5 & CSS3
 
-```bash
-ng e2e
-```
+✅ Pré-requisitos
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Git
 
-## Additional Resources
+Node.js (Recomendada a versão LTS)
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Angular CLI (npm install -g @angular/cli)
+
+⚙️ Instalação e Execução
+Bash
+
+# Clone este repositório
+$ git clone https://[URL-DO-SEU-REPOSITORIO-GIT]
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd nome-do-projeto
+
+# Instale as dependências
+$ npm install
+
+# Execute a aplicação em modo de desenvolvimento
+$ ng serve
+
+# O servidor inciará na porta:4200 - acesse http://localhost:4200
+📝 Licença
+Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
