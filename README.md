@@ -65,7 +65,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 Clone este repositório:
 
-git clone https://github.com/seu-usuario/angular-clients-crud.git
+git clone https://github.com/Welberrr/Academic_Crud-Angular-Material.git
 
 
 Acesse o diretório do projeto:
