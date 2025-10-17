@@ -9,6 +9,8 @@ O principal objetivo deste projeto é servir como um **item de portfólio**, evi
 Além das operações básicas de um CRUD, a aplicação se integra à **API governamental do IBGE**.  
 O usuário seleciona um **Estado** em um campo de seleção e, com base nessa escolha, um segundo campo é populado dinamicamente com os **municípios correspondentes**, demonstrando a integração com serviços de terceiros e a reatividade da aplicação.
 
+A **base de dados é local**, armazenada **no próprio navegador** (utilizando LocalStorage), garantindo persistência simples e independente de servidor.
+
 ---
 
 ## ✨ Funcionalidades
@@ -19,19 +21,24 @@ O usuário seleciona um **Estado** em um campo de seleção e, com base nessa es
 - **Exclusão de Clientes:** Opção para remover um cliente da base de dados.  
 - **Seleção de Localidade (IBGE API):** Integração com a API de localidades do IBGE.  
   A seleção de um Estado popula dinamicamente um segundo campo de seleção com seus respectivos municípios.  
+- **Base de Dados Local:** Os dados são armazenados diretamente no navegador, sem necessidade de backend.  
 - **Interface com Angular Material:** Todos os componentes visuais (tabelas, botões, modais e formulários) são estilizados com Angular Material, garantindo um design limpo e profissional.
 
 ---
 
 ## 💻 Telas do Projeto
 
-### 🏠 Tela Principal (Listagem de Clientes)
-Aqui você pode adicionar um print da tela principal da sua aplicação.  
-📸 **[INSERIR PRINT DA TELA DE LISTAGEM AQUI]**
+### 🗂️ Tela de Consulta (Listagem de Clientes)
+Aqui você pode adicionar um print da tela principal da aplicação, onde é feita a listagem e gerenciamento dos clientes.
 
-### ✍️ Tela de Cadastro/Edição de Cliente
-Aqui você pode adicionar um print do formulário/modal de cadastro.  
-📸 **[INSERIR PRINT DA TELA DE CADASTRO AQUI]**
+![alt text](image-1.png)
+
+---
+
+### 🧾 Tela de Cadastro/Edição de Cliente
+Aqui você pode adicionar um print do formulário/modal de cadastro e edição de clientes.
+
+![alt text](image.png)
 
 ---
 
@@ -51,7 +58,8 @@ Aqui você pode adicionar um print do formulário/modal de cadastro.
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 
 - [Node.js](https://nodejs.org/) — (recomendada a versão **LTS**)  
-- [Angular CLI](https://angular.io/cli) — Instalação:  
+- [Angular CLI](https://angular.io/cli) — Instalação: 
+
   ```bash
   npm install -g @angular/cli
 
@@ -86,3 +94,5 @@ http://localhost:4200/
 Este projeto está sob a licença MIT.
 Veja o arquivo LICENSE
  para mais detalhes.
+
+👨‍💻 Desenvolvido por Welber Henrique
