@@ -29,14 +29,12 @@ A **base de dados é local**, armazenada **no próprio navegador** (utilizando L
 ## 💻 Telas do Projeto
 
 ### 🗂️ Tela de Consulta (Listagem de Clientes)
-Aqui você pode adicionar um print da tela principal da aplicação, onde é feita a listagem e gerenciamento dos clientes.
 
 ![alt text](image-1.png)
 
 ---
 
 ### 🧾 Tela de Cadastro/Edição de Cliente
-Aqui você pode adicionar um print do formulário/modal de cadastro e edição de clientes.
 
 ![alt text](image.png)
 
@@ -92,7 +90,6 @@ http://localhost:4200/
 📝 Licença
 
 Este projeto está sob a licença MIT.
-Veja o arquivo LICENSE
- para mais detalhes.
+Veja o arquivo LICENSE para mais detalhes.
 
 👨‍💻 Desenvolvido por Welber Henrique
